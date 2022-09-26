@@ -34,7 +34,7 @@ function Createprofile(props) {
     } else {
       navigate("/login");
     }
-  }, []);
+  },);
 
   //Delete a profile
   const deletenote = async (id) => {
