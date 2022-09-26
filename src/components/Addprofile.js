@@ -7,7 +7,7 @@ function Addprofile(props) {
     const [profile, setProfile] = useState({name:"",degree:"",languages:"",exprience:"",projects:""});
     const addprofile= async(name,degree,languages,exprience,projects)=>{
         //API call
-        const response = await fetch("http://localhost:5000/api/profile/addprofile", {
+        const response = await fetch("https://ill-erin-slug-wig.cyclic.app//api/profile/addprofile", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
