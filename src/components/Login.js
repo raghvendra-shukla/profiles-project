@@ -7,7 +7,7 @@ function Login(props) {
     const [credentials, setCredentials] = useState({email:"",password:""})
     const handleonsubmit= async (e)=>{
         e.preventDefault();
-        const response = await fetch("/api/auth/login", {
+        const response = await fetch("http://localhost:5000/api/auth/login", {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

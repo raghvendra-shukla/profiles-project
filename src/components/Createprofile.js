@@ -10,12 +10,12 @@ function Createprofile(props) {
   const { showAlert } = props;
   const ref=useRef(null);
   const refclose=useRef(null);
-  // const host = "http://localhost:5000";
+  const host = "http://localhost:5000";
   const [profile, setprofile] = useState([]);
   const getprofile = async () => {
     //API call
     const response = await fetch(
-      "/api/profile/fetchaprofile",
+      "http://localhost:5000/api/profile/fetchaprofile",
       {
         method: "GET",
         headers: {
@@ -40,7 +40,7 @@ function Createprofile(props) {
   const deletenote = async (id) => {
     //Deleting a profile
     const response = await fetch(
-      `/api/profile/deleteprofile/${id}`,
+      `http://localhost:5000/api/profile/deleteprofile/${id}`,
       {
         method: "DELETE",
         headers: {
@@ -67,7 +67,7 @@ function Createprofile(props) {
     projects
   ) => {
     // Api call
-    const response = await fetch(`/api/profile/updateprofile/${id}`, {
+    const response = await fetch(`${host}/api/profile/updateprofile/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

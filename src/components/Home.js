@@ -11,7 +11,7 @@ function Home(props) {
   const [profile, setprofile] = useState([]);
   const getallprofile=async()=>{
       //API call
-      const response = await fetch("/api/profile/fetchallprofile", {
+      const response = await fetch("http://localhost:5000/api/profile/fetchallprofile", {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
