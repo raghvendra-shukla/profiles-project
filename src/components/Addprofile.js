@@ -3,7 +3,7 @@ import React from 'react';
 
 
 function Addprofile(props) {
-    const [profiles, setProfiles] = useState([]);
+    const [profiles, setProfiles] = useState(null);
     const [profile, setProfile] = useState({name:"",degree:"",languages:"",exprience:"",projects:""});
     const addprofile= async(name,degree,languages,exprience,projects)=>{
         //API call
@@ -52,7 +52,7 @@ function Addprofile(props) {
                 <label htmlFor="projects" className="form-label">Projects</label>
                 <input type="text" className="form-control" onChange={handleonchange} id="projects" name="projects" minLength={5} required value={profile.projects}/>
             </div>
-            <button disabled={profile.name.length<3|| profile.degree.length<3|| profile.languages.length<3|| profile.exprience.length<3|| profile.projects.length<3}type="submit" className="btn btn-primary" onClick={handleonclick}>Add Profile <i className="fa-solid fa-user-plus"></i></button>
+            <button disabled={profiles!=null || profile.name.length<3|| profile.degree.length<3|| profile.languages.length<3|| profile.exprience.length<3|| profile.projects.length<3}type="submit" className="btn btn-primary" onClick={handleonclick}>Add Profile <i className="fa-solid fa-user-plus"></i></button>
         </form>
     </div>
   )

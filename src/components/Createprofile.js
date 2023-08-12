@@ -10,7 +10,7 @@ function Createprofile(props) {
   const { showAlert } = props;
   const ref=useRef(null);
   const refclose=useRef(null);
-  const host = "http://localhost:5000";
+  // const host = "http://localhost:5000";
   const [profile, setprofile] = useState([]);
   const getprofile = async () => {
     //API call
@@ -76,7 +76,7 @@ function Createprofile(props) {
       body: JSON.stringify({ name, degree, languages, exprience, projects }),
     });
     const json = response.json();
-    //logic to Editing a note
+    //logic to Editing a profile
     const newprof = JSON.parse(JSON.stringify(profile));
     for (let index = 0; index < newprof.length; index++) {
       const element = newprof[index];
